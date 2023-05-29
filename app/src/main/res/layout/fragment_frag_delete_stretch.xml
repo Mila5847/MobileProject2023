@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragDeleteStretch"
+    android:background="@color/mainPage"
+    >
+    <TextView
+        android:id="@+id/tvPlan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deleteStretches"
+        android:textSize="30sp"
+        android:background="@color/lightwhite"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="25dp"
+        />
+    <EditText
+        android:id="@+id/editDeleteStretch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterStretchToDelete"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="#eaf4f4"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/btnDeleteStretch"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:text="@string/deleteStretches"
+        android:background="@color/buttonColor"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+    <TextView
+        android:id="@+id/textViewStretch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/listStretches" />
+    <TextView
+        android:id="@+id/txtDispDeleteStretch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+</LinearLayout>

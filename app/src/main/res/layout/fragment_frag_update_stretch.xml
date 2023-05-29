@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragUpdateStretch"
+    android:background="@color/mainPage">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/updateStretch"
+            android:textSize="30sp"
+            android:background="@color/lightwhite"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/editUpdateIDStretch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter ID of the stretch to update"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnUpdateStretch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/buttonColor"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/editStretch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Stretch"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Duration"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editStretchDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/editStretchTrainerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Trainer Id"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_margin="20dp"/>
+        <TextView
+            android:id="@+id/textViewStretches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current List of Stretches"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtDispUpdateStretches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </LinearLayout>
+</ScrollView>

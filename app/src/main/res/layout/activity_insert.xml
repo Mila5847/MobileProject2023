@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainPage">
+
+    <Button
+        android:id="@+id/insertTrainerBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/insertTrainer"
+        android:background="@color/buttonColor"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/insertStretchBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/insertStretch"
+        android:background="@color/buttonColor"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/insertExerciseBtn"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insertTrainerBtn" />
+
+    <Button
+        android:id="@+id/insertExerciseBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/insertExercise"
+        android:background="@color/buttonColor"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentHolder"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/fragmentHolder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/formColor"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/insertTrainerBtn"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

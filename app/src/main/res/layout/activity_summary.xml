@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainPage">
+    <LinearLayout
+        android:id="@+id/summaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@color/mainPage">
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Summary"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:background="#52796f"
+            android:textColor="@color/white"
+            />
+        <CheckBox
+            android:id="@+id/checkboxCaloriesPresentMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/totalCalForMonth"
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"
+            />
+        <TextView
+            android:id="@+id/tvTotalCaloriesPresentMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Calories Burned: "
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+        <CheckBox
+            android:id="@+id/checkboxDurationPresentMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/totalStretchDurationForMonth"
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+        <TextView
+            android:id="@+id/tvTotalDurationPresentMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Stretch Duration: "
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+
+        <CheckBox
+            android:id="@+id/checkboxCaloriesPastMonths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/totalCalPastMonth"
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+
+        <TextView
+            android:id="@+id/tvTotalCaloriesPastMonths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Calories Burned: "
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+
+        <CheckBox
+            android:id="@+id/checkboxDurationPastMonths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/totalStretchPastMonth"
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+
+        <TextView
+            android:id="@+id/tvTotalDurationPastMonths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Stretch Duration: "
+            android:textSize="16sp"
+            android:textColor="@color/darkBlue"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/tvMotivation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need Motivation? "
+            android:textSize="20sp"
+            android:textColor="@color/darkBlue"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:layout_gravity="center_horizontal"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/quote" />
+
+    </LinearLayout>
+
+</ScrollView>

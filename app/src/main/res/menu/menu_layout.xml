@@ -1,0 +1,28 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/insert"
+        android:title="INSERT"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/display"
+        android:title="DISPLAY"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/update"
+        android:title="UPDATE"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/delete"
+        android:title="DELETE"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/monthlyPlan"
+        android:title="MONTHLY PLAN"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/summary"
+        android:title="SUMMARY"
+        app:showAsAction="never"/>
+</menu>

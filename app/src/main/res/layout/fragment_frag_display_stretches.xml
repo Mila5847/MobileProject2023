@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragDisplayStretches"
+    android:background="@color/mainPage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Display Stretches"
+            android:textSize="30sp"
+            android:background="@color/lightwhite"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="25dp" />
+        <RadioGroup
+            android:id="@+id/radGrpDisplayStretches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:onClick="onClickRadio"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="20dp">
+            <RadioButton
+                android:id="@+id/radioAllStretches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Display All Stretches"
+                android:checked="true" />
+            <RadioButton
+                android:id="@+id/radioSearchStretches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search by stretch name" />
+        </RadioGroup>
+        <LinearLayout
+            android:id="@+id/searchHolderStretches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <EditText
+                android:id="@+id/editTextSearchStretches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter search stretch name" />
+            <Button
+                android:id="@+id/btnSearchStretch"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Search Stretch"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@color/buttonColor"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textResultsStretches"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Exercises Results: "
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+</ScrollView>

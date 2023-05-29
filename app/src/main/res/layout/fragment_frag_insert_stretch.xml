@@ -1,0 +1,59 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/mainPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insert Stretch"
+            android:textSize="30sp"
+            android:background="@color/lightwhite"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="25dp"  />
+        <EditText
+            android:id="@+id/editStretch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Stretch"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Duration"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editStretchDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/editStretchTrainerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Trainer Id"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/btnInsertStretch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert Stretch"
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/buttonColor"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</ScrollView>

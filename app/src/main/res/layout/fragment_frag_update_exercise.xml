@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragUpdateExercise"
+    android:background="@color/mainPage">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/updateExercise"
+            android:textSize="30sp"
+            android:background="@color/lightwhite"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/editUpdateExerciseID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter ID of the exercise to update"
+                android:inputType="number"
+                android:textSize="20sp"
+
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnUpdateExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/buttonColor"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/editExercise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Exercise Name"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editSets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Sets"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/editReps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Reps"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Weight"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/editCalories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Calories"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/editExerciseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:inputType="text" />
+        <EditText
+            android:id="@+id/editExerciseTrainerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Trainer Id"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/editExerciseStretchId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Stretch Id"
+            android:textSize="20sp"
+            android:inputType="number" />
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_margin="20dp"/>
+        <TextView
+            android:id="@+id/textViewExercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current List of Exercises"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtDispUpdateExercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </LinearLayout>
+</ScrollView>

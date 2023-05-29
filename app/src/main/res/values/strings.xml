@@ -1,3 +1,52 @@
 <resources>
     <string name="app_name">MobileProject</string>
+    <string-array name="workouts_muscular">
+        <item>Easy Muscular Workout</item>
+        <item>Medium Muscular Workout</item>
+        <item>Hard Muscular Workout</item>
+    </string-array>
+    <string-array name="workouts_cardio">
+        <item>Easy Cardio Workout</item>
+        <item>Medium Cardio Workout</item>
+        <item>Hard Cardio Workout</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="deleteTrainers">Delete Trainer</string>
+    <string name="deleteStretches"> Delete Stretch</string>
+    <string name="deleteExercise"> Delete Exercise</string>
+
+    <string name="displayTrainers">Display Trainers</string>
+    <string name="displayStretches"> Display Stretches</string>
+    <string name="displayExercise"> Display Exercises</string>
+
+    <string name="insertTrainer">Insert Trainer</string>
+    <string name="insertStretch">Insert Stretch</string>
+    <string name="insertExercise">Insert Exercise</string>
+
+    <string name="updateTrainer">Update Trainer</string>
+    <string name="updateStretch">Update Stretch</string>
+    <string name="updateExercise">Update Exercise</string>
+
+    <string name="monthlyPlan">Workout Plan for this month</string>
+    <string name="monthlyPastPlan">Workout Plan from last month</string>
+
+    <string name="exercisesForThisMonth">Exercises for this month</string>
+    <string name="stretchesForThisMonth">Stretches for this month</string>
+    <string name="exercisesFromPastMonth">Exercises from last month</string>
+    <string name="stretchesFromPastMonth">Stretches from last month</string>
+
+    <string name="totalCalForMonth">Total calories burned for this month</string>
+    <string name="totalStretchDurationForMonth">Total stretch duration for this month</string>
+    <string name="totalCalPastMonth">Total calories burned for the past month</string>
+    <string name="totalStretchPastMonth">Total stretch duration for the past month</string>
+
+    <string name="enterExerciseToDelete">Enter the exercise to delete</string>
+    <string name="enterStretchToDelete">Enter the stretch to delete</string>
+    <string name="enterTrainerToDelete">Enter the trainer to delete</string>
+
+    <string name="listExercise">Current List of Exercises</string>
+    <string name="listStretches">Current List of Stretches</string>
+    <string name="listTrainers">Current List of Trainers</string>
 </resources>
