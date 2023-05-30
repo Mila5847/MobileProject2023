@@ -55,8 +55,8 @@ The 3-layer web app allows the user to do the following:
 
 <a name="difficulties"></a>
 ## Difficulties
-- Using SQLite was quite challenging. If the database needed to be reset, it must first be removed from the project and rebuilt again.
-Part of my database looks like this:
+- Using SQLite was quite challenging. If the database needed to be reset, it must first be removed from the project and rebuilt again. This link helped a lot: https://www.geeksforgeeks.org/how-to-view-and-locate-sqlite-database-in-android-studio/
+- Part of my database looks like this:
 ```kotlin
 private inner class CustomSQLiteOpenHelper(
     context: Context
