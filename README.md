@@ -1,7 +1,7 @@
 # MobileProject2023
 ## Project Overview
 Done throughout my second year of College in Computer Science for my Mobile Application Development 1: Android class with Kotlin.
-It is a Fitness Tracker App that calculates Display total calories burned and total strtching duration for the current month and for
+It is a Fitness Tracker App that calculates Display total calories burned and total stretching duration for the current month and for
 the past month.
 
 ## Table of Contents
@@ -15,10 +15,10 @@ the past month.
 <a name="project-description"></a>
 ## Project Description 
 - The project is developed using Android Studio. It allows a user to input stretches and exercises. Each stretch and exercise has
-a trainer. For each stretch and exercise, a date should be inputted. The date input allows to separate the exercises and
-stretches when calculating the total calories burned and total strtching duration for the current month and for the past month.
-- Multiple layouts, activities and fragments are used. Here are some examples of the UI (*the layouts shown here mostly display
-the CRUD operations that could be done for exercises but trainers and stretches also uses similar layouts)
+a trainer. For each stretch and exercise, a date should be inputted. The date input allows for the separation of the exercises and
+stretches when calculating the total calories burned and total stretching duration for the current month and for the past month.
+- Multiple layouts, activities, and fragments are used. Here are some examples of the UI (*the layouts shown here mostly display
+the CRUD operations that could be done for exercises but trainers and stretches also use similar layouts)
 ![image](https://github.com/Mila5847/MobileProject2023/assets/46633364/96471656-38f5-41e3-b3e3-f9ce632dcbbf)
 ![image](https://github.com/Mila5847/MobileProject2023/assets/46633364/145c6383-ffca-4c8e-810a-4571ec858c5b)
 ![image](https://github.com/Mila5847/MobileProject2023/assets/46633364/343bd157-eea9-4158-bcda-e8ea1baf83ab)
@@ -41,22 +41,21 @@ the CRUD operations that could be done for exercises but trainers and stretches 
 
 <a name="usage"></a>
 ## Usage 
-This app could have been developed in a simplier way, allowing the user to only be able to perform CRUD operations on trainers, stretches,
+This app could have been developed in a simpler way, allowing the user to only be able to perform CRUD operations on trainers, stretches,
 and exercises. However, an interesting experience would be to do something with the data given by the user. That is why I decided to make
-this app more useful by providing a tracker for calories burned and stretch durations. This app is useful not only to store data, but also
-keep track of the user's performance. 
+this app more useful by providing a tracker for calories burned and stretch durations. This app is useful not only to store data, but also keep track of the user's performance. 
 
 <a name="features"></a>
 ## Features 
-The 3-layer web app allows to do the following 
+The 3-layer web app allows the user to do the following:
 - View, create, update, delete a trainer.
 - View, create, update, delete a stretch
 - View, create, update, delete an exercise
-- Display total calories burned and total strtching duration for the current month and for the past month.
+- Display total calories burned and total stretching duration for the current month and for the past month.
 
 <a name="difficulties"></a>
 ## Difficulties
-- Using SQLite was quite challenging. If the database needed to be reset, it must first be removed from the project and re-built again.
+- Using SQLite was quite challenging. If the database needed to be reset, it must first be removed from the project and rebuilt again.
 Part of my database looks like this:
 ```kotlin
 private inner class CustomSQLiteOpenHelper(
@@ -147,7 +146,7 @@ private inner class CustomSQLiteOpenHelper(
       
 <a name="improvements"></a>
 ## Future Improvements Ideas
-- I would like to modify the app so the calories are calculated based on the user's gender, age, and exercise's sets and reps instead of 
+- I would like to modify the app so the calories are calculated based on the user's gender, age, and exercise sets and reps instead of 
 only adding the exercises' calories (inputted by the user) together.
-- I would like to provide more statistics to the user. For instance, comparing the calories burned throghout the months and keeping track
+- I would like to provide more statistics to the user. For instance, comparing the calories burned throughout the months and keeping track
 of the user's improvement will be a good feature to develop
