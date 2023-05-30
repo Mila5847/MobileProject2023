@@ -58,64 +58,93 @@ The 3-layer web app allows to do the following
 ## Difficulties
 - Using SQLite was quite challenging. If the database needed to be reset, it must first be removed from the project and re-built again.
 Part of my database looks like this:
-```kotlin 
-    private inner class CustomSQLiteOpenHelper(
-        context: Context
-    ) : SQLiteOpenHelper(
-        context, DB_NAME,
-        null, DB_VERSION
-    ) {
-        // This function only runs the first time the database is created
-        override fun onCreate(db: SQLiteDatabase) {
-            // Create a table for workouts and all their details, including trainer ID
-           /* val workoutsTable = ("CREATE TABLE " + TABLE_WORKOUT + " (" +
-                    TABLE_ROW_EXERCISE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                    TABLE_ROW_EXERCISE + " TEXT NOT NULL, " +
-                    TABLE_ROW_SETS + " INTEGER, " +
-                    TABLE_ROW_REPS + " INTEGER, " +
-                    TABLE_ROW_WEIGHT + " INTEGER, " +
-                    TABLE_ROW_CALORIES + " INTEGER, " + // optional
-                    TABLE_ROW_DATE + " TEXT NOT NULL, " +
-                    TABLE_ROW_TRAINER_ID + " INTEGER NOT NULL, " +
-                    "FOREIGN KEY(" + TABLE_ROW_TRAINER_ID + ") REFERENCES " + TABLE_TRAINER + "(" + TABLE_ROW_TRAINER_ID + ")" +
-                    ");")
-            db.execSQL(workoutsTable)*/
+```kotlin
+private inner class CustomSQLiteOpenHelper(
+    context: Context
+) : SQLiteOpenHelper(
+    context, DB_NAME,
+    null, DB_VERSION
+) {
+    // This function only runs the first time the database is created
+    override fun onCreate(db: SQLiteDatabase) {
+        // Create a table for workouts and all their details, including trainer ID
+        val workoutsTable = ("CREATE TABLE $TABLE_WORKOUT (" +
+            "$TABLE_ROW_EXERCISE_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            "$TABLE_ROW_EXERCISE TEXT NOT NULL, " +
+            "$TABLE_ROW_SETS INTEGER, " +
+            "$TABLE_ROW_REPS INTEGER, " +
+            "$TABLE_ROW_WEIGHT INTEGER, " +
+            "$TABLE_ROW_CALORIES INTEGER, " + // optional
+            "$TABLE_ROW_DATE TEXT NOT NULL, " +
+            "$TABLE_ROW_TRAINER_ID INTEGER NOT NULL, " +
+            "$TABLE_ROW_STRETCH_ID INTEGER, " + // foreign key column
+            "FOREIGN KEY($TABLE_ROW_TRAINER_ID) REFERENCES $TABLE_TRAINER($TABLE_ROW_TRAINER_ID), " +
+            "FOREIGN KEY($TABLE_ROW_STRETCH_ID) REFERENCES $TABLE_STRETCH($TABLE_ROW_STRETCH_ID)" +
+            ");")
+        db.execSQL(workoutsTable)
 
-            val workoutsTable = ("CREATE TABLE $TABLE_WORKOUT (" +
-                    "$TABLE_ROW_EXERCISE_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                    "$TABLE_ROW_EXERCISE TEXT NOT NULL, " +
-                    "$TABLE_ROW_SETS INTEGER, " +
-                    "$TABLE_ROW_REPS INTEGER, " +
-                    "$TABLE_ROW_WEIGHT INTEGER, " +
-                    "$TABLE_ROW_CALORIES INTEGER, " + // optional
-                    "$TABLE_ROW_DATE TEXT NOT NULL, " +
-                    "$TABLE_ROW_TRAINER_ID INTEGER NOT NULL, " +
-                    "$TABLE_ROW_STRETCH_ID INTEGER, " + // foreign key column
-                    "FOREIGN KEY($TABLE_ROW_TRAINER_ID) REFERENCES $TABLE_TRAINER($TABLE_ROW_TRAINER_ID), " +
-                    "FOREIGN KEY($TABLE_ROW_STRETCH_ID) REFERENCES $TABLE_STRETCH($TABLE_ROW_STRETCH_ID)" +
-                    ");")
-            db.execSQL(workoutsTable)
+        // Create a table for trainers
+        val trainersTable = ("CREATE TABLE $TABLE_TRAINER (" +
+            "$TABLE_ROW_TRAINER_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            "$TABLE_ROW_TRAINER_FIRST_NAME TEXT NOT NULL, " +
+            "$TABLE_ROW_TRAINER_LAST_NAME TEXT NOT NULL" +
+            ");")
+        db.execSQL(trainersTable)
 
-            // Create a table for trainers
-            val trainersTable = ("CREATE TABLE " + TABLE_TRAINER + " (" +
-                    TABLE_ROW_TRAINER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                    TABLE_ROW_TRAINER_FIRST_NAME + " TEXT NOT NULL, " +
-                    TABLE_ROW_TRAINER_LAST_NAME + " TEXT NOT NULL" +
-                    ");")
-            db.execSQL(trainersTable)
-            // Create a table for stretches
-            val stretchesTable = ("CREATE TABLE " + TABLE_STRETCH + " (" +
-                    TABLE_ROW_STRETCH_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                    TABLE_ROW_STRETCH_NAME + " TEXT NOT NULL, " +
-                    TABLE_ROW_STRETCH_DURATION + " INTEGER NOT NULL, " +
-                    TABLE_ROW_STRETCH_DATE + " TEXT NOT NULL, " +
-                    TABLE_ROW_TRAINER_ID + " INTEGER NOT NULL, " +
-                    "FOREIGN KEY(" + TABLE_ROW_TRAINER_ID + ") REFERENCES " + TABLE_TRAINER + "(" + TABLE_ROW_TRAINER_ID + ")" +
-                    ");")
-            db.execSQL(stretchesTable)
+        // Create a table for stretches
+        val stretchesTable = ("CREATE TABLE $TABLE_STRETCH (" +
+            "$TABLE_ROW_STRETCH_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            "$TABLE_ROW_STRETCH_NAME TEXT NOT NULL, " +
+            "$TABLE_ROW_STRETCH_DURATION INTEGER NOT NULL, " +
+            "$TABLE_ROW_STRETCH_DATE TEXT NOT NULL, " +
+            "$TABLE_ROW_TRAINER_ID INTEGER NOT NULL, " +
+            "FOREIGN KEY($TABLE_ROW_TRAINER_ID) REFERENCES $TABLE_TRAINER($TABLE_ROW_TRAINER_ID)" +
+            ");")
+        db.execSQL(stretchesTable)
+    }
+}
+```
+- Get total calories burned for the past month function:
+```kotlin
+    fun getTotalCaloriesBurnedUpForThePastMonth(): Int {
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.MONTH, -1)
+        val lastMonthYear = calendar.get(Calendar.YEAR)
+        val lastMonth = calendar.get(Calendar.MONTH) + 1 // Adding 1 since Calendar.MONTH is zero-based
+
+        val threeMonthsAgoMonthFormatted = String.format("%02d", lastMonth) // Zero-padding the month if necessary
+
+        val query =
+            "SELECT SUM($TABLE_ROW_CALORIES) FROM $TABLE_WORKOUT WHERE SUBSTR($TABLE_ROW_DATE, 6, 2) <= '$threeMonthsAgoMonthFormatted' AND SUBSTR($TABLE_ROW_DATE, 1, 4) <= '$lastMonthYear'"
+        val cursor = db.rawQuery(query, null)
+        var totalCalories = 0
+        if (cursor.moveToFirst()) {
+            totalCalories = cursor.getInt(0)
         }
-        ```
-        
+        cursor.close()
+        return totalCalories
+    }
+```
+- Get total calories burned for the current month function:
+```kotlin 
+    fun getTotalCaloriesBurnedForTheMonth(exerciseId: String): Int {
+        val calendar = Calendar.getInstance()
+        val currentYear = calendar.get(Calendar.YEAR)
+        val currentMonth = calendar.get(Calendar.MONTH) + 1 // Adding 1 since Calendar.MONTH is zero-based
+
+        val currentMonthFormatted = String.format("%02d", currentMonth) // Zero-padding the month if necessary
+
+        val query = "SELECT SUM($TABLE_ROW_CALORIES) FROM $TABLE_WORKOUT WHERE $TABLE_ROW_EXERCISE_ID = '$exerciseId' AND SUBSTR($TABLE_ROW_DATE, 6, 2) = '$currentMonthFormatted' AND SUBSTR($TABLE_ROW_DATE, 1, 4) = '$currentYear'"
+        val cursor = db.rawQuery(query, null)
+        var totalCalories = 0
+        if (cursor.moveToFirst()) {
+            totalCalories = cursor.getInt(0)
+        }
+        cursor.close()
+        return totalCalories
+    }
+ ```
+      
 <a name="improvements"></a>
 ## Future Improvements Ideas
 - I would like to modify the app so the calories are calculated based on the user's gender, age, and exercise's sets and reps instead of 
