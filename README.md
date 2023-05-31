@@ -10,6 +10,7 @@ the past month.
 - [UI](#ui)
 - [Usage](#usage)
 - [Features](#features)
+- [Difficulties](#difficulties)
 - [Future Improvements Ideas](#improvements)
 
 <a name="project-description"></a>
